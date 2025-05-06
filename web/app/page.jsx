@@ -72,7 +72,7 @@ export default function Home() {
 
               <div className="homeBodyScreenshotsFooter">
                 <h3>Settings Dialog</h3>
-                <span>Customize your experience and how chat looks with KickTalk.</span>
+                <span>Customize your experience and how chat looks within the Settings.</span>
               </div>
             </div>
             <div className="screenshotItem">
@@ -88,7 +88,7 @@ export default function Home() {
 
               <div className="homeBodyScreenshotsFooter">
                 <h3>User Dialogs</h3>
-                <span>Enjoy reading viewers logs and with KickTalk.</span>
+                <span>Click on a user to view their User logs available within the User Dialogs.</span>
               </div>
             </div>
             <div className="screenshotItem">
@@ -104,7 +104,7 @@ export default function Home() {
 
               <div className="homeBodyScreenshotsFooter">
                 <h3>Emote Dialogs</h3>
-                <span>express your feelings and enjoy picking your favorite emotes with KickTalk.</span>
+                <span>Express your feelings and enjoy picking your favorite emotes from 7TV to Kick emotes with KickTalk.</span>
               </div>
             </div>
           </div>
