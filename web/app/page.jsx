@@ -2,11 +2,22 @@
 
 import Image from "next/image";
 import "./page.css";
+import { useState } from 'react';
 import logo from "../public/logo.svg";
-import screenshot1 from "@/public/app_screenshots/2.png";
+import card1 from "../public/app_screenshots/card-1.png";
+import card2 from "../public/app_screenshots/card-2.png";
+import card3 from "../public/app_screenshots/card-3.png";
+import card4 from "../public/app_screenshots/card-4.png";
+import card5 from "../public/app_screenshots/card-5.png";
+import Loader from './loader';
+
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
   return (
+    <>
+    {!isLoaded && <Loader onFinish={() => setIsLoaded(true)} />}
+  
     <div className="homeContainer">
       <div className="homeHeader">
         <div className="homeHeaderLeft">
@@ -58,55 +69,56 @@ export default function Home() {
 
         <div className="homeBodyScreenshots">
           <div className="screenshotItem">
-            <Image src={screenshot1} alt="" />
+            <Image src={card1} alt="" />
 
             <div className="homeBodyScreenshotsFooter">
-              <h3>KickTalk</h3>
-              <span>A Kick Chat client to elevate your chatting experience.</span>
+              <h3>Settings Dialog</h3>
+              <span>Customize your experience and how chat looks with KickTalk.</span>
             </div>
           </div>
           <div className="screenshotItem">
-            <Image src={screenshot1} alt="" />
+            <Image src={card2} alt="" />
 
             <div className="homeBodyScreenshotsFooter">
-              <h3>KickTalk</h3>
+              <h3>Smooth UI</h3>
               <span>
-                A Kick Chat client to elevate your chatting experience. A Kick Chat client to elevate your chatting experience.
+              Experience a very elegant and a satesfyting UI with KickTalk.
               </span>
             </div>
           </div>
           <div className="screenshotItem">
-            <Image src={screenshot1} alt="" />
+            <Image src={card3} alt="" />
 
             <div className="homeBodyScreenshotsFooter">
-              <h3>KickTalk</h3>
+              <h3>User Dialogs</h3>
               <span>
-                A Kick Chat client to elevate your chatting experience. A Kick Chat client to elevate your chatting experience.
+              Enjoy reading viewers logs and with KickTalk.
               </span>
             </div>
           </div>
           <div className="screenshotItem">
-            <Image src={screenshot1} alt="" />
+            <Image src={card4} alt="" />
 
             <div className="homeBodyScreenshotsFooter">
-              <h3>KickTalk</h3>
+              <h3>Native Functionality</h3>
               <span>
-                A Kick Chat client to elevate your chatting experience. A Kick Chat client to elevate your chatting experience.
+              You can still use and view Kick’s native functionality with better enhancements with KickTalk.
               </span>
             </div>
           </div>
           <div className="screenshotItem">
-            <Image src={screenshot1} alt="" />
+            <Image src={card5} alt="" />
 
             <div className="homeBodyScreenshotsFooter">
-              <h3>KickTalk</h3>
+              <h3>Emote Dialogs</h3>
               <span>
-                A Kick Chat client to elevate your chatting experience. A Kick Chat client to elevate your chatting experience.
+              express your feelings and enjoy picking your favorite emotes with KickTalk.
               </span>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }

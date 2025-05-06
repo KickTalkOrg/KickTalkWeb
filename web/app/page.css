@@ -65,6 +65,12 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.screenshotItem:hover {
+  transform: translateY(-20px);
+  transform-origin: center;
 }
 
 .screenshotItem img {
