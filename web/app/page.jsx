@@ -53,16 +53,20 @@ export default function Home() {
             </div>
 
             <div className="homeBodyHeadRight">
-              <button
+              <a
                 className="homeBodyHeadRightButton download"
-                onClick={() => window.open("https://api.kicktalk.app/downloads/KickTalkBetaTest.exe", "_blank")}>
+                href="https://api.kicktalk.app/downloads/KickTalkBetaTest.exe"
+                target="_blank"
+                rel="noopener noreferrer">
                 Download the Beta
-              </button>
-              <button
+              </a>
+              <a
                 className="homeBodyHeadRightButton discord"
-                onClick={() => window.open("https://discord.gg/nFrZaxJmdn", "_blank")}>
+                href="https://discord.gg/nFrZaxJmdn"
+                target="_blank"
+                rel="noopener noreferrer">
                 Join our Discord
-              </button>
+              </a>
             </div>
           </div>
 
