@@ -55,7 +55,7 @@ export default function Home() {
             <div className="homeBodyHeadRight">
               <button
                 className="homeBodyHeadRightButton download"
-                onClick={() => window.open("https://kick-talk-beta.replit.app/KickTalkBetaTest.exe", "_blank")}>
+                onClick={() => window.open("https://api.kicktalk.app/downloads/KickTalkBetaTest.exe", "_blank")}>
                 Download the Beta
               </button>
               <button
@@ -72,7 +72,7 @@ export default function Home() {
 
               <div className="homeBodyScreenshotsFooter">
                 <h3>Settings Dialog</h3>
-                <span>Customize your experience and how chat looks within the Settings.</span>
+                <span>Customize the chat to your liking. Make it your canvas all within the Settings.</span>
               </div>
             </div>
             <div className="screenshotItem">
@@ -80,7 +80,7 @@ export default function Home() {
 
               <div className="homeBodyScreenshotsFooter">
                 <h3>Smooth UI</h3>
-                <span>Experience a very elegant and a satesfyting UI with KickTalk.</span>
+                <span>Experience a very elegant, fast, smooth and a satesfyting UI with KickTalk.</span>
               </div>
             </div>
             <div className="screenshotItem">
