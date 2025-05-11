@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: "/download",
-        destination: "https://api.kicktalk.app/downloads/KickTalkBetaTest.exe",
+        destination: "https://api.kicktalk.app/downloads/KickTalkBeta.exe",
         permanent: true,
       },
     ];
