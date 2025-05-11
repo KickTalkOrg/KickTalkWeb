@@ -55,7 +55,7 @@ export default function Home() {
             <div className="homeBodyHeadRight">
               <a
                 className="homeBodyHeadRightButton download"
-                href="https://api.kicktalk.app/downloads/KickTalkBetaTest.exe"
+                href="https://api.kicktalk.app/downloads/KickTalkBeta.exe"
                 target="_blank"
                 rel="noopener noreferrer">
                 Download the Beta
