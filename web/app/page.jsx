@@ -63,6 +63,9 @@ export default function Home() {
                 onClick={() => window.open("https://discord.gg/nFrZaxJmdn", "_blank")}>
                 Join our Discord
               </button>
+              <button className="homeBodyHeadRightButton changelog" onClick={() => window.open("/changelog", "_self")}>
+                View Changelog
+              </button>
             </div>
           </div>
 
