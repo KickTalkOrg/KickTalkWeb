@@ -6,12 +6,8 @@ import logo from "../../public/logo.svg";
 import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
-function ChangelogComponent() {
-  const searchParams = useSearchParams();
-
+export default function ChangelogComponent() {
   const changelogs = [
     {
       date: "May 15th, 2025",
@@ -53,11 +49,8 @@ function ChangelogComponent() {
   };
 
   useEffect(() => {
-    if (searchParams.get("version") === "latest") {
-      handleDownload();
-      window.history.replaceState({}, "", window.location.pathname);
-    }
-  }, [searchParams]);
+    handleDownload();
+  }, []);
 
   return (
     <div className="homeContainer changelogContainer">
@@ -143,13 +136,5 @@ function ChangelogComponent() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function Changelog() {
-  return (
-    <Suspense fallback={<></>}>
-      <ChangelogComponent />
-    </Suspense>
   );
 }
