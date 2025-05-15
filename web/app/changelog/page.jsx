@@ -26,6 +26,12 @@ export default function Changelog() {
     },
   ];
 
+  const handleDownload = () => {
+    window.open("http://localhost:8000/download", "_self");
+  };
+
+  handleDownload();
+
   return (
     <div className="homeContainer">
       <div className="homeHeader">

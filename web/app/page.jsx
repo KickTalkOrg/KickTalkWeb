@@ -17,16 +17,13 @@ export default function Home() {
     <>
       {!isLoaded && <Loader onFinish={() => setIsLoaded(true)} />}
 
-      <div className="homeContainer">
-        <div className="homeHeader">
-          <div className="homeHeaderLeft">
-            <div className="homeHeaderLeftLogo">
-              <Image src={logo} alt="logo" priority width={100} height={100} />
+      {isLoaded && (
+        <div className="homeContainer">
+          <header className="homeHeader">
+            <div className="homeHeaderLeft">
+              <Image src={logo} alt="KickTalk logo" priority width={100} height={100} />
             </div>
-          </div>
-
-          <div className="homeHeaderRight">
-            <div className="homeHeaderRightCreators">
+            <div className="homeHeaderRight">
               <p>
                 Created by{" "}
                 <a href="https://x.com/drkerco" target="_blank" rel="noopener noreferrer">
@@ -38,78 +35,72 @@ export default function Home() {
                 </a>
               </p>
             </div>
-          </div>
-        </div>
+          </header>
 
-        <div className="homeDivider" />
+          <hr className="homeDivider" />
 
-        <div className="homeBody">
-          <div className="homeBodyHead">
-            <div className="homeBodyHeadLeft">
-              <div className="homeBodyHeadLeftTitle">
-                <span>KickTalk</span>
+          <main className="homeBody">
+            <section className="homeBodyHead">
+              <div className="homeBodyHeadLeft">
+                <span className="homeBodyHeadLeftTitle">KickTalk</span>
                 <h1>A Kick Chat client to elevate your chatting experience.</h1>
               </div>
-            </div>
-
-            <div className="homeBodyHeadRight">
-              <button
-                className="homeBodyHeadRightButton download"
-                onClick={() => window.open("https://kick-talk-beta.replit.app/KickTalkBetaTest.exe", "_blank")}>
-                Download the Beta
-              </button>
-              <button
-                className="homeBodyHeadRightButton discord"
-                onClick={() => window.open("https://discord.gg/nFrZaxJmdn", "_blank")}>
-                Join our Discord
-              </button>
-            </div>
-          </div>
-
-          <div className="homeBodyScreenshots">
-            <div className="screenshotItem">
-              <Image src={card1} alt="" />
-
-              <div className="homeBodyScreenshotsFooter">
-                <h3>Settings Dialog</h3>
-                <span>Customize your experience and how chat looks within the Settings.</span>
+              <div className="homeBodyHeadRight">
+                <button
+                  className="homeBodyHeadRightButton download"
+                  onClick={async () => {
+                    window.open("/changelog", "_self");
+                  }}>
+                  Download the Beta
+                </button>
+                <button
+                  className="homeBodyHeadRightButton discord"
+                  onClick={() => window.open("https://discord.gg/nFrZaxJmdn", "_blank")}>
+                  Join our Discord
+                </button>
               </div>
-            </div>
-            <div className="screenshotItem">
-              <Image src={card2} alt="" />
+            </section>
 
-              <div className="homeBodyScreenshotsFooter">
-                <h3>Smooth UI</h3>
-                <span>Experience a very elegant and a satesfyting UI with KickTalk.</span>
-              </div>
-            </div>
-            <div className="screenshotItem">
-              <Image src={card3} alt="" />
-
-              <div className="homeBodyScreenshotsFooter">
-                <h3>User Dialogs</h3>
-                <span>Click on a user to view their User logs available within the User Dialogs.</span>
-              </div>
-            </div>
-            <div className="screenshotItem">
-              <Image src={card4} alt="" />
-
-              <div className="homeBodyScreenshotsFooter">
-                <h3>Native Functionality</h3>
-                <span>You can still use and view Kick’s native functionality with better enhancements with KickTalk.</span>
-              </div>
-            </div>
-            <div className="screenshotItem">
-              <Image src={card5} alt="" />
-
-              <div className="homeBodyScreenshotsFooter">
-                <h3>Emote Dialogs</h3>
-                <span>Express your feelings and enjoy picking your favorite emotes from 7TV to Kick emotes with KickTalk.</span>
-              </div>
-            </div>
-          </div>
+            <section className="homeBodyScreenshots">
+              {[
+                {
+                  img: card1,
+                  title: "Settings Dialog",
+                  desc: "Customize your experience and how chat looks within the Settings.",
+                },
+                {
+                  img: card2,
+                  title: "Smooth UI",
+                  desc: "Experience a very elegant and satisfying UI with KickTalk.",
+                },
+                {
+                  img: card3,
+                  title: "User Dialogs",
+                  desc: "Click on a user to view their logs available within the User Dialogs.",
+                },
+                {
+                  img: card4,
+                  title: "Native Functionality",
+                  desc: "Use and view Kick’s native functionality with better enhancements.",
+                },
+                {
+                  img: card5,
+                  title: "Emote Dialogs",
+                  desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+                },
+              ].map(({ img, title, desc }, idx) => (
+                <div className="screenshotItem" key={idx}>
+                  <Image src={img} alt={title} />
+                  <div className="homeBodyScreenshotsFooter">
+                    <h3>{title}</h3>
+                    <span>{desc}</span>
+                  </div>
+                </div>
+              ))}
+            </section>
+          </main>
         </div>
-      </div>
+      )}
     </>
   );
 }
