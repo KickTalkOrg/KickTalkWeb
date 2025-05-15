@@ -8,11 +8,11 @@ export default function Loader({ onFinish }) {
   const [hideLoader, setHideLoader] = useState(false);
 
   useEffect(() => {
-    const textTimer = setTimeout(() => setShowText(true), 1000);
+    const textTimer = setTimeout(() => setShowText(true), 100);
     const finishTimer = setTimeout(() => {
       setHideLoader(true);
-      setTimeout(onFinish, 2000);
-    }, 5000);
+      setTimeout(onFinish, 1000);
+    }, 1500);
 
     return () => {
       clearTimeout(textTimer);

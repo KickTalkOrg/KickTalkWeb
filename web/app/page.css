@@ -6,14 +6,13 @@
 
 .homeHeader {
   justify-content: space-between;
-  align-items: center;
   flex: 1 0 124px;
-  display: flex;
 }
 
+.homeHeader,
 .homeHeaderLeft {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .homeHeaderLeftLogo img {
@@ -45,7 +44,7 @@
 
 .homeBody {
   flex-direction: column;
-  flex: 1;
+  flex: 1 1;
   gap: 48px;
   width: 100%;
   display: flex;
@@ -54,14 +53,15 @@
 
 .homeBodyScreenshots {
   display: flex;
-  flex: 1;
+  flex: 1 1;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
 .screenshotItem {
-  background: linear-gradient(180deg, #d9d9d900 0%, #d9d9d90e 50%, #d9d9d900 100%);
-  flex: 1 0 340px;
+  background: linear-gradient(180deg, #d9d9d900, #d9d9d90e 50%, #d9d9d900);
+  flex: 0 0 340px;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -160,7 +160,7 @@
 .homeBodyHeadRightButton.download {
   color: rgba(237, 237, 237, 0.9);
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3);
-  background: linear-gradient(to bottom, #0d8624, rgba(8, 88, 23, 0.6));
+  background: linear-gradient(180deg, #0d8624, rgba(8, 88, 23, 0.6));
 }
 
 .homeBodyHeadRightButton.download:hover {
@@ -198,8 +198,10 @@
 
 @media (max-width: 1200px) {
   .homeBodyHead {
+    padding-top: 24px;
     flex-direction: column;
     align-items: center;
+    gap: 32px;
   }
 
   .homeBodyHeadLeftTitle {
@@ -220,4 +222,79 @@
   .screenshotItem {
     flex: 1 1 100%;
   }
+}
+
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0a0f0b;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.logoWrapper {
+  animation: slideInSnap 1s ease-in-out forwards;
+}
+
+.logoWrapper,
+.logoWrapperFadeOut {
+  position: absolute;
+  font-size: 100px;
+  opacity: 1;
+  transform: scale(2);
+}
+
+.logoWrapperFadeOut {
+  animation: fadeOut 1s ease-in forwards;
+  transform: translateX(-150%) scale(5);
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInSnap {
+  0% {
+    transform: translateX(-1000%) scale(5);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(-150%) scale(5);
+    opacity: 1;
+  }
+}
+
+.creatorText {
+  top: 40%;
+  position: relative;
+  color: white;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slideUp {
+  opacity: 0;
 }

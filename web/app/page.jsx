@@ -10,6 +10,7 @@ import card3 from "../public/app_screenshots/card-3.png";
 import card4 from "../public/app_screenshots/card-4.png";
 import card5 from "../public/app_screenshots/card-5.png";
 import Loader from "./loader";
+import Link from "next/link";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -19,9 +20,11 @@ export default function Home() {
 
       {isLoaded && (
         <div className="homeContainer">
-          <header className="homeHeader">
+          <div className="homeHeader">
             <div className="homeHeaderLeft">
-              <Image src={logo} alt="KickTalk logo" priority width={100} height={100} />
+              <div className="homeHeaderLeftLogo">
+                <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
+              </div>
             </div>
             <div className="homeHeaderRight">
               <p>
@@ -35,33 +38,29 @@ export default function Home() {
                 </a>
               </p>
             </div>
-          </header>
+          </div>
 
-          <hr className="homeDivider" />
+          <div className="homeDivider" />
 
-          <main className="homeBody">
-            <section className="homeBodyHead">
+          <div className="homeBody">
+            <div className="homeBodyHead">
               <div className="homeBodyHeadLeft">
-                <span className="homeBodyHeadLeftTitle">KickTalk</span>
-                <h1>A Kick Chat client to elevate your chatting experience.</h1>
+                <div className="homeBodyHeadLeftTitle">
+                  <span>KickTalk</span>
+                  <h1>A Kick Chat client to elevate your chatting experience.</h1>
+                </div>
               </div>
               <div className="homeBodyHeadRight">
-                <button
-                  className="homeBodyHeadRightButton download"
-                  onClick={async () => {
-                    window.open("/changelog", "_self");
-                  }}>
+                <Link className="homeBodyHeadRightButton download" href="/changelogs?version=latest">
                   Download the Beta
-                </button>
-                <button
-                  className="homeBodyHeadRightButton discord"
-                  onClick={() => window.open("https://discord.gg/nFrZaxJmdn", "_blank")}>
+                </Link>
+                <Link className="homeBodyHeadRightButton discord" href="https://discord.gg/nFrZaxJmdn" target="_blank">
                   Join our Discord
-                </button>
+                </Link>
               </div>
-            </section>
+            </div>
 
-            <section className="homeBodyScreenshots">
+            <div className="homeBodyScreenshots">
               {[
                 {
                   img: card1,
@@ -88,6 +87,31 @@ export default function Home() {
                   title: "Emote Dialogs",
                   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
                 },
+                // {
+                //   img: card5,
+                //   title: "Emote Dialogs",
+                //   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+                // },
+                // {
+                //   img: card5,
+                //   title: "Emote Dialogs",
+                //   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+                // },
+                // {
+                //   img: card5,
+                //   title: "Emote Dialogs",
+                //   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+                // },
+                // {
+                //   img: card5,
+                //   title: "Emote Dialogs",
+                //   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+                // },
+                // {
+                //   img: card5,
+                //   title: "Emote Dialogs",
+                //   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+                // },
               ].map(({ img, title, desc }, idx) => (
                 <div className="screenshotItem" key={idx}>
                   <Image src={img} alt={title} />
@@ -97,8 +121,8 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </section>
-          </main>
+            </div>
+          </div>
         </div>
       )}
     </>
