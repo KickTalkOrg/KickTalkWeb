@@ -81,14 +81,14 @@ export default function ChangelogComponent() {
       <div className="homeBody">
         <div className="homeBodyHead changelogHead">
           <div className="homeBodyHeadLeftTitle changelogTitle">
-            <h1>{searchParams.get("version") === "latest" ? "New version downloaded! Whats changed?" : "What's new?"}</h1>
+            <h1>New version downloaded! Whats changed?</h1>
             <span>View all changes we have made to the current version you downloaded.</span>
 
             <div className="changelogDownloadButton">
               <p>Latest version didn't download?</p>
-              <button className="download-button" onClick={handleDownload}>
+              <Link href="https://api.kicktalk.app/download" className="download-button">
                 Download
-              </button>
+              </Link>
             </div>
           </div>
         </div>
