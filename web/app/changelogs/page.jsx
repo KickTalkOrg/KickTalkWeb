@@ -19,6 +19,7 @@ export default function Changelog() {
         "Added Reply functionality",
         "Added Reply Threads functionality",
         "@ mentions can now be clicked to open user dialog",
+        "Added old logs on initial chatroom load to user dialog",
         "Added Limited Context menu",
         "Added Timestamp options (h:mm, hh:mm, etc.)",
         "Added Unpin functionality",
