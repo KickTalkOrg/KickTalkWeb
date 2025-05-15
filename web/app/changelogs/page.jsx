@@ -45,7 +45,7 @@ export default function ChangelogComponent() {
   ];
 
   const handleDownload = () => {
-    window.open("http://api.kicktalk.app/download", "_self");
+    window.open("https://api.kicktalk.app/download", "_self");
   };
 
   useEffect(() => {
