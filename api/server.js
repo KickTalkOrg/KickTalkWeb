@@ -74,7 +74,7 @@ app.get("/download", async (req, res) => {
     const downloadUrl = exeAsset.browser_download_url.replace("http:", "https:");
     return res.redirect(downloadUrl);
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch release", details: err.message });
+    res.status(400).json({ error: "Failed to fetch release", details: err.message });
   }
 });
 
@@ -90,7 +90,7 @@ app.get("/downloads/KickTalkBetaTest.exe", async (req, res) => {
     const downloadUrl = exeAsset.browser_download_url.replace("http:", "https:");
     return res.redirect(downloadUrl);
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch release", details: err.message });
+    res.status(400).json({ error: "Failed to fetch release", details: err.message });
   }
 });
 
