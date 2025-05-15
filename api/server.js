@@ -76,6 +76,14 @@ app.get("/download", async (req, res) => {
   }
 });
 
+app.get("/downloads/KickTalkBetaTest.exe", (req, res) => {
+  res.redirect("https://kicktalk.app/changelogs?version=latest");
+});
+
+// app.get("/badges", (_, res) => {
+//   res.json(userBadges);
+// });
+
 // app.get("/badges", (_, res) => {
 //   res.json(userBadges);
 // });
