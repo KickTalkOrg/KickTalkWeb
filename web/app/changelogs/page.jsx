@@ -7,8 +7,11 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Changelog() {
+function ChangelogComponent() {
+  const searchParams = useSearchParams();
+
   const changelogs = [
     {
       date: "May 15th, 2025",
@@ -48,8 +51,6 @@ export default function Changelog() {
   const handleDownload = () => {
     window.open("http://api.kicktalk.app/download", "_self");
   };
-
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (searchParams.get("version") === "latest") {
@@ -142,5 +143,13 @@ export default function Changelog() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Changelog() {
+  return (
+    <Suspense fallback={<></>}>
+      <ChangelogComponent />
+    </Suspense>
   );
 }
