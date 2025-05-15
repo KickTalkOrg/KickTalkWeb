@@ -4,10 +4,11 @@ import "../page.css";
 import "./page.css";
 import logo from "../../public/logo.svg";
 import Image from "next/image";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import Link from "next/link";
-
-export default function ChangelogComponent() {
+import { useSearchParams } from "next/navigation";
+function ChangelogComponent() {
+  const searchParams = useSearchParams();
   const changelogs = [
     {
       date: "May 15th, 2025",
@@ -49,8 +50,11 @@ export default function ChangelogComponent() {
   };
 
   useEffect(() => {
-    handleDownload();
-  }, []);
+    if (searchParams.get("version") === "latest") {
+      handleDownload();
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+  }, [searchParams]);
 
   return (
     <div className="homeContainer changelogContainer">
@@ -81,7 +85,7 @@ export default function ChangelogComponent() {
       <div className="homeBody">
         <div className="homeBodyHead changelogHead">
           <div className="homeBodyHeadLeftTitle changelogTitle">
-            <h1>New version downloaded! Whats changed?</h1>
+            <h1>{searchParams.get("version") === "latest" ? "New version downloaded! Whats changed?" : "What's new?"}</h1>
             <span>View all changes we have made to the current version you downloaded.</span>
 
             <div className="changelogDownloadButton">
@@ -136,5 +140,13 @@ export default function ChangelogComponent() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Changelog() {
+  return (
+    <Suspense fallback={<></>}>
+      <ChangelogComponent />
+    </Suspense>
   );
 }

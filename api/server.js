@@ -78,20 +78,8 @@ app.get("/download", async (req, res) => {
   }
 });
 
-app.get("/downloads/KickTalkBetaTest.exe", async (req, res) => {
-  try {
-    const response = await githubApi.get(`/repos/${GITHUB_OWNER}/${GITHUB_REPO}/releases`);
-    const latestRelease = response.data[0];
-    const exeAsset = latestRelease.assets.find((asset) => asset.name === "KickTalk.exe");
-    if (!exeAsset) {
-      return res.status(404).json({ error: "KickTalk.exe not found in latest release" });
-    }
-
-    const downloadUrl = exeAsset.browser_download_url.replace("http:", "https:");
-    return res.redirect(downloadUrl);
-  } catch (err) {
-    res.status(400).json({ error: "Failed to fetch release", details: err.message });
-  }
+app.get("/downloads/KickTalkBetaTest.exe", (req, res) => {
+  res.redirect("https://kicktalk.app/changelogs?version=latest");
 });
 
 // app.get("/badges", (_, res) => {
