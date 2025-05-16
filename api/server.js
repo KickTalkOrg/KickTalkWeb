@@ -82,25 +82,6 @@ app.get("/downloads/KickTalkBetaTest.exe", (req, res) => {
   res.redirect("https://kicktalk.app/changelogs?version=latest");
 });
 
-// app.get("/badges", (_, res) => {
-//   res.json(userBadges);
-// });
-
-// app.get("/badges", (_, res) => {
-//   res.json(userBadges);
-// });
-
-// app.get("/badges/:name", (req, res) => {
-//   const name = req.params.name;
-//   const filePath = path.join(__dirname, "badges", `${name}.webp`);
-
-//   res.sendFile(filePath, (err) => {
-//     if (err) {
-//       res.status(404).json({ error: "Badge not found" });
-//     }
-//   });
-// });
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

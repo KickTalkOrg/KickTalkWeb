@@ -1,7 +1,8 @@
 .changelogContainer {
+  flex-direction: column;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  padding: 0;
 }
 
 .changelogHead {
@@ -9,6 +10,11 @@
   padding-top: 24px;
   flex-direction: column;
   align-items: center;
+}
+
+.changelogHeader,
+.changelogDivider {
+  padding: 0 80px;
 }
 
 .changelogTitle {
@@ -48,8 +54,7 @@
 .changelog-entry {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 24px;
+  padding: 24px 0;
 }
 
 .changelog-entry.faded {
@@ -71,9 +76,13 @@
 }
 
 .changelog-entry.latestRelease {
-  background-color: rgba(28, 187, 41, 0.05);
-  border-radius: 4px;
-  border: 1px solid rgba(1, 252, 13, 0.2);
+  /* background-color: rgba(28, 187, 41, 0.05); */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-image: url("../../public/dotBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .latestRelease .changelog-date {
@@ -89,6 +98,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 80px;
+  padding-bottom: 24px;
 }
 
 .changelog-date {
@@ -128,6 +139,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 40px 80px;
 }
 
 .major-update {
@@ -160,7 +172,7 @@
 
 .divider {
   height: 1px;
-  background-color: #2dbe5d3f;
+  background-color: rgba(255, 255, 255, 0.1);
   margin: 24px 0;
 }
 

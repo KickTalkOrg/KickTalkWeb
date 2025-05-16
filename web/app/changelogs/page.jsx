@@ -31,12 +31,27 @@ function ChangelogComponent() {
         "Fixed bug when you used up or down arrow in : or @ menus it wouldnt select right index",
       ],
     },
-    // {
-    //   date: "May 3rd, 2025",
-    //   version: "v. 1.0.2",
-    //   isLatest: false,
-    //   major: "Major Updates:",
-    // },
+    {
+      date: "May 3rd, 2025",
+      version: "v. 1.0.2",
+      isLatest: false,
+      major: "Major Updates:",
+      majorUpdates: [
+        "Added Reply functionality",
+        "Added Reply Threads functionality",
+        "@ mentions can now be clicked to open user dialog",
+        "Added old logs on initial chatroom load to user dialog",
+        "Added Limited Context menu",
+        "Added Timestamp options (h:mm, hh:mm, etc.)",
+        "Added Unpin functionality",
+      ],
+      minorUpdates: [
+        "Middle click on streamer name to open their stream in a browser tab",
+        "Fixed /user not working when having @ in username",
+        "Fixed duplicate emotes in emote menu when : completing",
+        "Fixed bug when you used up or down arrow in : or @ menus it wouldnt select right index",
+      ],
+    },
     // {
     //   date: "May 2nd, 2025",
     //   version: "v. 1.0.2",
@@ -58,7 +73,7 @@ function ChangelogComponent() {
 
   return (
     <div className="homeContainer changelogContainer">
-      <div className="homeHeader">
+      <div className="homeHeader changelogHeader">
         <div className="homeHeaderLeft">
           <Link href="/" className="homeHeaderLeftLogo">
             <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
@@ -80,7 +95,7 @@ function ChangelogComponent() {
         </div>
       </div>
 
-      <div className="homeDivider" />
+      <div className="homeDivider changelogDivider" />
 
       <div className="homeBody">
         <div className="homeBodyHead changelogHead">
@@ -107,6 +122,8 @@ function ChangelogComponent() {
                   <span className="version-number">{entry.version}</span>
                 </div>
               </div>
+
+              <div className="homeDivider changelogDivider" />
 
               <div className="changelog-content">
                 <div className="majorUpdates">
