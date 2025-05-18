@@ -60,12 +60,12 @@
 }
 
 .screenshotItem {
-  background: linear-gradient(180deg, #d9d9d900, #d9d9d90e 50%, #d9d9d900);
-  flex: 0 0 340px;
-  padding: 16px;
-  display: flex;
+  background: linear-gradient(#d9d9d900, #d9d9d90e 50%, #d9d9d900);
   flex-direction: column;
+  flex: 1 0 340px;
+  padding: 16px;
   transition: all 0.3s ease-in-out;
+  display: flex;
 }
 
 .screenshotItem:hover {

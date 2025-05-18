@@ -64,29 +64,44 @@ export default function Home() {
               {[
                 {
                   img: card1,
-                  title: "Settings Dialog",
-                  desc: "Customize your experience and how chat looks within the Settings.",
+                  title: "Pinned Messages",
+                  desc: "View pinned messages in a chatroom. You can also pin your own messages to keep them at the top of the chat.",
                 },
                 {
                   img: card2,
                   title: "Smooth UI",
-                  desc: "Experience a very elegant and satisfying UI with KickTalk.",
+                  desc: "Experience a very elegant, satisfying and smooth UI that is easy on the eyes.",
                 },
                 {
                   img: card3,
                   title: "User Dialogs",
-                  desc: "Click on a user to view their logs available within the User Dialogs.",
+                  desc: "Click on a user to view their logs in the channel plus mod actions available for channels where youre a mod.",
                 },
                 {
                   img: card4,
                   title: "Native Functionality",
-                  desc: "Use and view Kick’s native functionality with better enhancements.",
+                  desc: "Use and view Kick's native functionality with better enhancements built in.",
                 },
                 {
                   img: card5,
                   title: "Emote Dialogs",
                   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
                 },
+                // {
+                //   img: card5,
+                //   title: "7TV Features Built In",
+                //   desc: "7TV emotes, badges, paints and more are now built in and available to use in chatrooms.",
+                // },
+                // {
+                //   // img: card6,
+                //   title: "Reply Threads",
+                //   desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
+                // },
+                // {
+                //   // img: card7,
+                //   title: "Chatters List",
+                //   desc: "View a list of chatters in a chatroom. This is a custom feature built in only on KickTalk.",
+                // },
                 // {
                 //   img: card5,
                 //   title: "Emote Dialogs",
