@@ -4,13 +4,16 @@ import Image from "next/image";
 import "./page.css";
 import { useState } from "react";
 import logo from "../public/logo.svg";
-import card1 from "../public/app_screenshots/card-1.png";
-import card2 from "../public/app_screenshots/card-2.png";
-import card3 from "../public/app_screenshots/card-3.png";
-import card4 from "../public/app_screenshots/card-4.png";
-import card5 from "../public/app_screenshots/card-5.png";
+import card1 from "../public/app_screenshots/card-1.jpg";
+import card2 from "../public/app_screenshots/card-2.jpg";
+import card3 from "../public/app_screenshots/card-3.jpg";
+import card4 from "../public/app_screenshots/card-4.jpg";
+import card5 from "../public/app_screenshots/card-5.jpg";
+import card6 from "../public/app_screenshots/card-6.jpg";
 import Loader from "./loader";
 import Link from "next/link";
+import modActionsUserCard from "../public/app_screenshots/modActionsUserCard.png";
+import modActionsPinning from "../public/app_screenshots/modActionsPinning.png";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,11 +29,17 @@ export default function Home() {
                 <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
               </div>
             </div>
+            <div className="homeHeaderMiddle">
+              <Link href="/changelogs">
+                <span>Changelogs</span>
+                <div className="homeHeaderMiddleUnderline" />
+              </Link>
+            </div>
             <div className="homeHeaderRight">
               <p>
                 Created by{" "}
                 <a href="https://x.com/drkerco" target="_blank" rel="noopener noreferrer">
-                  DRKNESS
+                  DRKNESS_x
                 </a>{" "}
                 and{" "}
                 <a href="https://x.com/ftk789yt" target="_blank" rel="noopener noreferrer">
@@ -40,7 +49,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="homeDivider" />
+          <div className="homeHeaderBackground" />
 
           <div className="homeBody">
             <div className="homeBodyHead">
@@ -64,13 +73,13 @@ export default function Home() {
               {[
                 {
                   img: card1,
-                  title: "Pinned Messages",
-                  desc: "View pinned messages in a chatroom. You can also pin your own messages to keep them at the top of the chat.",
+                  title: "Smooth UI",
+                  desc: "Experience a very elegant, satisfying and smooth UI that is easy on the eyes.",
                 },
                 {
                   img: card2,
-                  title: "Smooth UI",
-                  desc: "Experience a very elegant, satisfying and smooth UI that is easy on the eyes.",
+                  title: "Pinned Messages",
+                  desc: "View pinned messages in a chatroom. You can also pin your own messages to keep them at the top of the chat.",
                 },
                 {
                   img: card3,
@@ -79,8 +88,8 @@ export default function Home() {
                 },
                 {
                   img: card4,
-                  title: "Native Functionality",
-                  desc: "Use and view Kick's native functionality with better enhancements built in.",
+                  title: "Colon Completion",
+                  desc: "Easily access emote completion using the colon key and tab to autocomplete.",
                 },
                 {
                   img: card5,
@@ -136,6 +145,39 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="homeDivider" />
+
+          <div className="homeModActions">
+            <div className="homeModActionsHeader">
+              <span>Simplifying moderator actions at your finger tips.</span>
+              <h1>Mod Actions</h1>
+            </div>
+
+            <div className="homeModActionsBody">
+              <div className="homeModActionsBodyItem split">
+                <div className="homeModActionsLeft">
+                  <h1 className="homeModActionsTitle">Mod Actions within User Cards</h1>
+                  <div className="homeModActionsLeftList">
+                    <span>Ban Users</span>
+                    <span>Unban Users</span>
+                    <span>Timeout Users</span>
+                    <span>View Chatroom Logs</span>
+                    <span>and more to come...</span>
+                  </div>
+                </div>
+                <div className="homeModActionsRight">
+                  <Image src={modActionsUserCard} alt="Mod Actions in User Cards" />
+                </div>
+              </div>
+              <div className="homeModActionsBodyItem middle">
+                <h1 className="homeModActionsTitle">Pinning and Unpinning Messages</h1>
+                <div className="homeModActionsMiddle">
+                  <Image src={modActionsPinning} alt="Pinning and Unpinning Messages" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
