@@ -11,24 +11,34 @@ function ChangelogComponent() {
   const searchParams = useSearchParams();
   const changelogs = [
     {
-      date: "May 15th, 2025",
-      version: "v. 1.0.3",
+      date: "May 28th, 2025",
+      version: "v. 1.1.0",
       isLatest: true,
       major: "Major Updates:",
       majorUpdates: [
-        "Added Reply functionality",
-        "Added Reply Threads functionality",
-        "@ mentions can now be clicked to open user dialog",
-        "Added old logs on initial chatroom load to user dialog",
-        "Added Limited Context menu",
-        "Added Timestamp options (h:mm, hh:mm, etc.)",
-        "Added Unpin functionality",
+        "COMPLETELY NEW SETTINGS DIALOG",
+        "TAB AUTO COMPLETE EMOTES: Tab Auto Completion for Emotes (ftk)",
+        "NOTIFICATION SOUNDS: Sound Notifications for Highlights now work for [default sound only] (ftk - dark)",
+        "REFRESH EMOTES: Added right click menu for Refreshing 7TV & Kick Emotes or click F5 (dark)",
+        "STREAM CARD: Stream Card added when you hover title, shows viewers and title + thumbnail (dark)",
+        "FILTER EMOTES: Emote Dialogs (7TV & Kick) filter by channel or global set (dark)",
+        "REORDER TABS: Drag & Drop Channel Tabs (ftk - dark)",
+        "RENAME TABS: Rename Channel Tabs by double-clicking the username or right clicking the tab and selecting rename tab (dark)",
+        "REPLY THREADS W/ EMOTES: Emotes and Emote dialogs are not added to Reply Threads (dark)",
+        "SEARCH DIALOG: Search chatroom messages with Ctrl + F (dark)",
       ],
       minorUpdates: [
-        "Middle click on streamer name to open their stream in a browser tab",
-        "Fixed /user not working when having @ in username",
-        "Fixed duplicate emotes in emote menu when : completing",
-        "Fixed bug when you used up or down arrow in : or @ menus it wouldnt select right index",
+        "Updated few design elements (dark)",
+        "User Cards now have badges (dark)",
+        "Tooltips in Emote Dialogs to show name of emote (dark)",
+        "Ctrl + T or Ctrl + J to open add new chatroom (dark - ftk)",
+        "Added Auth Websocket Connection for live data (ftk)",
+        "Right Click streamer name for dialog (dark)",
+        "Confirmation Dialog when trying to logout (dark)",
+        "Can now click on usernames on ban messages/timeout messages to open user dialog (dark)",
+        "Fixed 7TV bug where pogchamp in xqc for example would show three because of past conflicts with 7tv (ftk)",
+        "Fixed Kick-7TV having the same emotes, now 7TV takes priority (ftk)",
+        "Auto Updater will now work after this build, so you no longer have to go to the website (dark)",
       ],
     },
     // {
@@ -59,6 +69,30 @@ function ChangelogComponent() {
     //   major: "Major Updates:",
     // },
   ];
+
+  // const smallChangelogs = [
+  //   {
+  //     date: "May 15th, 2025",
+  //     version: "v. 1.0.3",
+  //     isLatest: true,
+  //     major: "Major Updates:",
+  //     majorUpdates: [
+  //       "Added Reply functionality",
+  //       "Added Reply Threads functionality",
+  //       "@ mentions can now be clicked to open user dialog",
+  //       "Added old logs on initial chatroom load to user dialog",
+  //       "Added Limited Context menu",
+  //       "Added Timestamp options (h:mm, hh:mm, etc.)",
+  //       "Added Unpin functionality",
+  //     ],
+  //     minorUpdates: [
+  //       "Middle click on streamer name to open their stream in a browser tab",
+  //       "Fixed /user not working when having @ in username",
+  //       "Fixed duplicate emotes in emote menu when : completing",
+  //       "Fixed bug when you used up or down arrow in : or @ menus it wouldnt select right index",
+  //     ],
+  //   },
+  // ];
 
   const handleDownload = () => {
     window.open("https://api.kicktalk.app/download", "_self");
