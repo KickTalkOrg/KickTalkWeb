@@ -16,7 +16,7 @@ function ChangelogComponent() {
       isLatest: true,
       major: "Major Updates:",
       majorUpdates: [
-        "COMPLETELY NEW SETTINGS DIALOG",
+        "COMPLETELY NEW SETTINGS DIALOG (dark)",
         "TAB AUTO COMPLETE EMOTES: Tab Auto Completion for Emotes (ftk)",
         "NOTIFICATION SOUNDS: Sound Notifications for Highlights now work for [default sound only] (ftk - dark)",
         "REFRESH EMOTES: Added right click menu for Refreshing 7TV & Kick Emotes or click F5 (dark)",
