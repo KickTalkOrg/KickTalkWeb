@@ -11,12 +11,12 @@ function ChangelogComponent() {
   const searchParams = useSearchParams();
   const changelogs = [
     {
-      date: "May 28th, 2025",
-      version: "v. 1.1.0",
+      date: "May 29th, 2025",
+      version: "v. 1.1.1",
       isLatest: true,
       major: "Major Updates:",
       majorUpdates: [
-        "COMPLETELY NEW SETTINGS DIALOG (dark)",
+        "NEW SETTINGS DIALOG: COMPLETELY NEW SETTINGS DIALOG (dark)",
         "TAB AUTO COMPLETE EMOTES: Tab Auto Completion for Emotes (ftk)",
         "NOTIFICATION SOUNDS: Sound Notifications for Highlights now work for [default sound only] (ftk - dark)",
         "REFRESH EMOTES: Added right click menu for Refreshing 7TV & Kick Emotes or click F5 (dark)",

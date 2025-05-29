@@ -14,7 +14,7 @@ import Loader from "./loader";
 import Link from "next/link";
 import modActionsUserCard from "../public/app_screenshots/modActionsUserCard.png";
 import modActionsPinning from "../public/app_screenshots/modActionsPinning.png";
-
+import githubIcon from "../public/github.svg";
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
@@ -26,6 +26,14 @@ export default function Home() {
           <div className="homeHeaderLeft">
             <div className="homeHeaderLeftLogo">
               <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
+              <button
+                onClick={() => window.open("https://github.com/KickTalkOrg/KickTalk", "_blank")}
+                className="homeHeaderLeftLogoButton">
+                <Image src={githubIcon} alt="Github Icon" priority width={20} height={20} />
+                <span>
+                  Github <img src="/arrowUpRight.svg" alt="Arrow Up Right" />
+                </span>
+              </button>
             </div>
           </div>
           <div className="homeHeaderMiddle">
