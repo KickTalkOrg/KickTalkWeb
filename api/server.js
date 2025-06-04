@@ -1,13 +1,56 @@
 import express from "express";
 import cors from "cors";
 import axios from "axios";
+import StreamElement from "./utils/donations/streamelements.js";
+import fs from "fs";
+import path from "path";
 
 const GITHUB_OWNER = "KickTalkOrg";
 const GITHUB_REPO = "KickTalk";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const DONATIONS_FILE = path.resolve("./donations.json");
+
 
 const port = 8000;
 const app = express();
+
+
+
+const client = new StreamElement({
+  JWT: "",
+});
+
+
+function saveDonation(donation) {
+  let donations = [];
+  if (fs.existsSync(DONATIONS_FILE)) {
+    try {
+      donations = JSON.parse(fs.readFileSync(DONATIONS_FILE, "utf-8"));
+    } catch (e) {
+      donations = [];
+    }
+  }
+  donations.push(donation);
+  fs.writeFileSync(DONATIONS_FILE, JSON.stringify(donations, null, 2));
+}
+
+
+client.connect();
+
+client.on("message", (data) => {
+  console.log(`Message received: ${data}`);
+});
+
+client.on("donation", (data) => {
+  console.log(`Donation received: ${data.name} - ${data.message}`);
+  saveDonation({
+    name: data.name,
+    message: data.message,
+    amount: data.amount,
+    timestamp: new Date().toISOString(),
+  });
+});
+
 
 app.use(
   cors({
