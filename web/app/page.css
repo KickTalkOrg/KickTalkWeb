@@ -68,9 +68,66 @@
   transition: all 0.3s ease-in-out;
 }
 
+.homeHeaderLeftLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .homeHeaderLeftLogo img {
   width: 48px;
   height: 48px;
+}
+
+.homeHeaderLeftLogoButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  gap: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.homeHeaderLeftLogoButton:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.homeHeaderLeftLogoButton:hover > img {
+  opacity: 0.9;
+}
+
+.homeHeaderLeftLogoButton > img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+.homeHeaderLeftLogoButton > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.homeHeaderLeftLogoButton > span > img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+  opacity: 0.5;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.homeHeaderLeftLogoButton:hover > span > img {
+  opacity: 0.9;
 }
 
 .homeHeaderRight {
