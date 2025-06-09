@@ -10,6 +10,9 @@ import card3 from "../public/app_screenshots/card-3.jpg";
 import card4 from "../public/app_screenshots/card-4.jpg";
 import card5 from "../public/app_screenshots/card-5.jpg";
 import card6 from "../public/app_screenshots/card-6.jpg";
+import card7 from "../public/app_screenshots/card-7.jpg";
+import card8 from "../public/app_screenshots/card-8.jpg";
+import card9 from "../public/app_screenshots/card-9.jpg";
 import settingsDialog from "../public/app_screenshots/settingsDialog.jpg";
 import Loader from "./loader";
 import Link from "next/link";
@@ -127,9 +130,9 @@ export default function Home() {
                 desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
               },
               {
-                img: card5,
-                title: "Emote Dialogs",
-                desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+                img: card6,
+                title: "Reply Threads",
+                desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
               },
               {
                 img: settingsDialog,
@@ -138,19 +141,19 @@ export default function Home() {
                 desc: "Customize your chatroom settings to your liking.",
               },
               {
-                img: card6,
-                title: "Reply Threads",
-                desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
+                img: card7,
+                title: "Custom Themes",
+                desc: "Choose from a variety of themes to customize your chatroom.",
               },
               {
-                img: card6,
-                title: "Reply Threads",
-                desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
+                img: card8,
+                title: "Mentions Tab",
+                desc: "View all mentions in that tab. All highlights will be shown here.",
               },
               {
-                img: card6,
-                title: "Reply Threads",
-                desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
+                img: card9,
+                title: "7TV Emote Set Updates",
+                desc: "Set auto update when changes are made. View changes (added/removed/renamed) in the chatroom.",
               },
               // {
               //   // img: card7,
