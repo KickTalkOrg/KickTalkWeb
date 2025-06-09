@@ -21,7 +21,7 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
     <>
-      {/* {!isLoaded && <Loader onFinish={() => setIsLoaded(true)} />} */}
+      {!isLoaded && <Loader onFinish={() => setIsLoaded(true)} />}
 
       <div className="homeContainer">
         <div className="homeBodyDonationFlag">
