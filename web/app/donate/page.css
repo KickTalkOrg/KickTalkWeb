@@ -174,3 +174,25 @@
 .donationOptions {
   margin-top: 48px;
 }
+
+@media (max-width: 1200px) {
+  .donateContent {
+    padding: 48px 24px;
+  }
+
+  .donateContent h1 {
+    font-size: 40px;
+  }
+
+  .donateContent > p {
+    font-size: 14px;
+  }
+
+  .donationOption {
+    min-width: 100%;
+  }
+
+  .donationOptionHeader {
+    align-items: center;
+  }
+}
