@@ -33,9 +33,9 @@
 .homeHeaderMiddle {
   position: relative;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  gap: 32px;
   align-items: center;
-  gap: 4px;
 }
 
 .homeHeaderMiddle a {
@@ -43,6 +43,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   gap: 4px;
   height: 100%;
   color: rgba(255, 255, 255, 0.3);
@@ -63,9 +64,66 @@
   top: 65px;
   background-color: rgba(255, 255, 255, 0.1);
   position: absolute;
+  opacity: 0;
   bottom: 0;
-  left: 0;
+  /* left: 0; */
   transition: all 0.3s ease-in-out;
+}
+
+.homeBodyDonationFlag {
+  background: #ffffff17;
+  height: 56px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  font-size: 16px;
+  padding: 0 24px;
+}
+
+.homeBodyDonationFlag span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.homeBodyDonationFlag > span img {
+  width: 32px;
+  height: 32px;
+  background-color: #ffffff17;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.homeBodyDonationFlag a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: #16ff055d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 4px 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.homeBodyDonationFlag a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.homeBodyDonationFlag a:hover img {
+  opacity: 0.9;
+}
+
+.homeBodyDonationFlag a img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.homeHeaderMiddle a:hover > .homeHeaderMiddleUnderline {
+  opacity: 1;
 }
 
 .homeHeaderLeftLogo {
@@ -178,10 +236,21 @@
 .screenshotItem {
   background: linear-gradient(#d9d9d900, #d9d9d90e 50%, #d9d9d900);
   flex-direction: column;
-  flex: 1 0 340px;
+  flex: 1 0 320px;
+  max-width: 400px;
   padding: 16px;
   transition: all 0.3s ease-in-out;
   display: flex;
+}
+
+.screenshotItem.wide {
+  flex: 1 0 calc(50% - 4px);
+  max-width: calc(50% - 4px);
+}
+
+.screenshotItem.full {
+  flex: 1 0 100%;
+  max-width: 100%;
 }
 
 .screenshotItem:hover {
@@ -439,7 +508,13 @@
   }
 
   .screenshotItem {
-    flex: 0 1 32%;
+    flex: 1 0 300px;
+    max-width: calc(33.33% - 12px);
+  }
+
+  .screenshotItem.wide {
+    flex: 1 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
   }
 }
 
@@ -473,13 +548,20 @@
   }
 
   .screenshotItem {
-    flex: 1 1 40%;
+    flex: 1 0 280px;
+    max-width: calc(50% - 8px);
+  }
+
+  .screenshotItem.wide {
+    flex: 1 0 100%;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .screenshotItem {
     flex: 1 1 100%;
+    max-width: 100%;
   }
 
   .homeHeader {
@@ -490,6 +572,17 @@
 
   .homeHeaderMiddleUnderline {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .homeBodyHeadRight {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .homeBodyHeadRightButton {
+    width: 100% !important;
   }
 }
 

@@ -4,22 +4,21 @@ import axios from "axios";
 import StreamElement from "./utils/donations/streamelements.js";
 import fs from "fs";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const GITHUB_OWNER = "KickTalkOrg";
 const GITHUB_REPO = "KickTalk";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const DONATIONS_FILE = path.resolve("./donations.json");
 
-
 const port = 8000;
 const app = express();
 
-
-
 const client = new StreamElement({
-  JWT: "",
+  JWT: process.env.STREAMELEMENTS_JWT,
 });
-
 
 function saveDonation(donation) {
   let donations = [];
@@ -33,7 +32,6 @@ function saveDonation(donation) {
   donations.push(donation);
   fs.writeFileSync(DONATIONS_FILE, JSON.stringify(donations, null, 2));
 }
-
 
 client.connect();
 
@@ -51,10 +49,15 @@ client.on("donation", (data) => {
   });
 });
 
-
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://kicktalk.app", "https://www.kicktalk.app", "http://localhost:5173"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5174",
+      "https://kicktalk.app",
+      "https://www.kicktalk.app",
+      "http://localhost:5173",
+    ],
     methods: ["GET"],
   }),
 );
@@ -123,6 +126,21 @@ app.get("/download", async (req, res) => {
 
 app.get("/downloads/KickTalkBetaTest.exe", (req, res) => {
   res.redirect("https://kicktalk.app/changelogs?version=latest");
+});
+
+app.get("/v1/donators", (req, res) => {
+  try {
+    if (!fs.existsSync(DONATIONS_FILE)) {
+      return res.json([]);
+    }
+
+    const donationsData = fs.readFileSync(DONATIONS_FILE, "utf-8");
+    const donations = JSON.parse(donationsData);
+    res.json(donations);
+  } catch (err) {
+    console.error("Error reading donations file:", err);
+    res.status(500).json({ error: "Failed to read donations", details: err.message });
+  }
 });
 
 app.listen(port, () => {

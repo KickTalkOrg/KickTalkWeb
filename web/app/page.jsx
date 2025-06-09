@@ -10,22 +10,37 @@ import card3 from "../public/app_screenshots/card-3.jpg";
 import card4 from "../public/app_screenshots/card-4.jpg";
 import card5 from "../public/app_screenshots/card-5.jpg";
 import card6 from "../public/app_screenshots/card-6.jpg";
+import settingsDialog from "../public/app_screenshots/settingsDialog.jpg";
 import Loader from "./loader";
 import Link from "next/link";
 import modActionsUserCard from "../public/app_screenshots/modActionsUserCard.png";
 import modActionsPinning from "../public/app_screenshots/modActionsPinning.png";
 import githubIcon from "../public/github.svg";
+import Donator from "../public/Donator.webp";
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
   return (
     <>
-      {!isLoaded && <Loader onFinish={() => setIsLoaded(true)} />}
+      {/* {!isLoaded && <Loader onFinish={() => setIsLoaded(true)} />} */}
 
       <div className="homeContainer">
+        <div className="homeBodyDonationFlag">
+          <span>
+            Donate to support the development of KickTalk. Also get a special badge in chat!{" "}
+            <Image src={Donator} alt="Donate Badge" width={32} height={32} />
+          </span>
+          <Link href="/donate">
+            <span>
+              Donate Now <img src="/arrowUpRight.svg" alt="Arrow Up Right" />
+            </span>
+          </Link>
+        </div>
         <div className="homeHeader">
           <div className="homeHeaderLeft">
             <div className="homeHeaderLeftLogo">
-              <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
+              <Link href="/">
+                <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
+              </Link>
               <button
                 onClick={() => window.open("https://github.com/KickTalkOrg/KickTalk", "_blank")}
                 className="homeHeaderLeftLogoButton">
@@ -37,8 +52,16 @@ export default function Home() {
             </div>
           </div>
           <div className="homeHeaderMiddle">
+            <Link href="/">
+              <span>Home</span>
+              <div className="homeHeaderMiddleUnderline" />
+            </Link>
             <Link href="/changelogs">
               <span>Changelogs</span>
+              <div className="homeHeaderMiddleUnderline" />
+            </Link>
+            <Link href="/donate">
+              <span>Donate</span>
               <div className="homeHeaderMiddleUnderline" />
             </Link>
           </div>
@@ -103,16 +126,32 @@ export default function Home() {
                 title: "Emote Dialogs",
                 desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
               },
-              // {
-              //   img: card5,
-              //   title: "7TV Features Built In",
-              //   desc: "7TV emotes, badges, paints and more are now built in and available to use in chatrooms.",
-              // },
-              // {
-              //   // img: card6,
-              //   title: "Reply Threads",
-              //   desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
-              // },
+              {
+                img: card5,
+                title: "Emote Dialogs",
+                desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
+              },
+              {
+                img: settingsDialog,
+                isWide: true,
+                title: "Settings Dialog",
+                desc: "Customize your chatroom settings to your liking.",
+              },
+              {
+                img: card6,
+                title: "Reply Threads",
+                desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
+              },
+              {
+                img: card6,
+                title: "Reply Threads",
+                desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
+              },
+              {
+                img: card6,
+                title: "Reply Threads",
+                desc: "Reply to messages and create threads to keep conversations organized. Threads are a custom feature built in only on KickTalk.",
+              },
               // {
               //   // img: card7,
               //   title: "Chatters List",
@@ -143,8 +182,8 @@ export default function Home() {
               //   title: "Emote Dialogs",
               //   desc: "Express yourself and enjoy picking your favorite emotes from 7TV to Kick emotes.",
               // },
-            ].map(({ img, title, desc }, idx) => (
-              <div className="screenshotItem" key={idx}>
+            ].map(({ img, title, desc, isWide }, idx) => (
+              <div className={`screenshotItem ${isWide ? "wide" : ""}`} key={idx}>
                 <Image src={img} alt={title} />
                 <div className="homeBodyScreenshotsFooter">
                   <h3>{title}</h3>

@@ -6,7 +6,9 @@ import logo from "../../public/logo.svg";
 import Image from "next/image";
 import { Suspense, useEffect } from "react";
 import Link from "next/link";
+import githubIcon from "../../public/github.svg";
 import { useSearchParams } from "next/navigation";
+import Donator from "../../public/Donator.webp";
 function ChangelogComponent() {
   const searchParams = useSearchParams();
   const changelogs = [
@@ -107,27 +109,62 @@ function ChangelogComponent() {
 
   return (
     <div className="homeContainer changelogContainer">
-      <div className="homeHeader changelogHeader">
+      <div className="homeBodyDonationFlag">
+        <span>
+          Donate to support the development of KickTalk. Also get a special badge in chat!{" "}
+          <Image src={Donator} alt="Donate Badge" width={32} height={32} />
+        </span>
+        <Link href="/donate">
+          <span>
+            Donate Now <img src="/arrowUpRight.svg" alt="Arrow Up Right" />
+          </span>
+        </Link>
+      </div>
+      <div className="homeHeader">
         <div className="homeHeaderLeft">
-          <Link href="/" className="homeHeaderLeftLogo">
-            <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
+          <div className="homeHeaderLeftLogo">
+            <Link href="/">
+              <Image src={logo} alt="KickTalk Logo" priority width={100} height={100} />
+            </Link>
+            <button
+              onClick={() => window.open("https://github.com/KickTalkOrg/KickTalk", "_blank")}
+              className="homeHeaderLeftLogoButton">
+              <Image src={githubIcon} alt="Github Icon" priority width={20} height={20} />
+              <span>
+                Github <img src="/arrowUpRight.svg" alt="Arrow Up Right" />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div className="homeHeaderMiddle">
+          <Link href="/">
+            <span>Home</span>
+            <div className="homeHeaderMiddleUnderline" />
+          </Link>
+          <Link href="/changelogs">
+            <span>Changelogs</span>
+            <div className="homeHeaderMiddleUnderline" />
+          </Link>
+          <Link href="/donate">
+            <span>Donate</span>
+            <div className="homeHeaderMiddleUnderline" />
           </Link>
         </div>
         <div className="homeHeaderRight">
-          <div className="homeHeaderRightCreators">
-            <p>
-              Created by{" "}
-              <a href="https://x.com/drkerco" target="_blank" rel="noopener noreferrer">
-                DRKNESS_x
-              </a>{" "}
-              and{" "}
-              <a href="https://x.com/ftk789yt" target="_blank" rel="noopener noreferrer">
-                ftk789
-              </a>
-            </p>
-          </div>
+          <p>
+            Created by{" "}
+            <a href="https://x.com/drkerco" target="_blank" rel="noopener noreferrer">
+              DRKNESS_x
+            </a>{" "}
+            and{" "}
+            <a href="https://x.com/ftk789yt" target="_blank" rel="noopener noreferrer">
+              ftk789
+            </a>
+          </p>
         </div>
       </div>
+
+      <div className="homeHeaderBackground" />
 
       <div className="homeDivider changelogDivider" />
 
