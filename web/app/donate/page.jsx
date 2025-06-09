@@ -68,7 +68,7 @@ export default function Changelog() {
           <div className="donationOption">
             <div className="donationOptionHeader">
               <div className="donationOptionHeaderText">
-                <h1>10$</h1>
+                <h1>15$+</h1>
                 <span>one-time</span>
               </div>
 
