@@ -14,7 +14,7 @@ function ChangelogComponent() {
   const changelogs = [
     {
       date: "June 9th, 2025",
-      version: "v. 1.1.2",
+      version: "v. 1.1.3",
       isLatest: true,
       major: "Major Updates:",
       majorUpdates: [
